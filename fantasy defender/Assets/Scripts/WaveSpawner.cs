@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
         }
         numEnemiesThisWave += numAdditionalEnemiesPerWave;
         yield return new WaitForSeconds(delayBetweenWaves);
-        enemyPrefabs[1].GetComponent<Enemy>().maxHealth += healthChangePerRound;
+        enemyPrefabs[0].GetComponent<Enemy>().maxHealth += healthChangePerRound;
         StartCoroutine(SpawnWave());
 
     }

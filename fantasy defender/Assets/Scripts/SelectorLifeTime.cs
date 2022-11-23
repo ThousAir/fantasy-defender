@@ -17,6 +17,7 @@ public class SelectorLifeTime : MonoBehaviour
     {
         if(Time.time > spawnTime + lifeTime)
         {
+            Debug.Log("destroy");
             Destroy(gameObject);
         }
     }

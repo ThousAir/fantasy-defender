@@ -4,20 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TowerBase
   - ShopPanel
-  - Enemy
+  - TowerBase
   - Home
-  - Projectile
+  - Enemy
   - bow
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - enemy
+  - 
   - Water
   - UI
-  - 
+  - enemy
   - 
   - 
   - 

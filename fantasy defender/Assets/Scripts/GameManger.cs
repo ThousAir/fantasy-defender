@@ -30,6 +30,14 @@ public class GameManger : MonoBehaviour
     {
         moneyText.text = "Money: " + money;
         lifesText.text = "Lifes: " + lifes;
+        if (Input.GetAxis("Cancel") > 0)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit(); //does not work in the editor, it works when you compile
+#endif
+        }
     }
     public static void checkLife()
     {
