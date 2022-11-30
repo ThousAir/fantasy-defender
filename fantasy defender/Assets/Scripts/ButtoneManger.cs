@@ -18,4 +18,8 @@ public class ButtoneManger : MonoBehaviour
             Application.Quit(); //does not work in the editor, it works when you compile
 #endif
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("level1");
+    }
 }

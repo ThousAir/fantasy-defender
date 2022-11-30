@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     private WayPoints waypointReference;
     private Vector2 targetWaypoint;
-    private int wayPointIndex;
+    public int wayPointIndex=0;
 
     private SpriteRenderer sr;
 
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wayPointIndex = 0;
+      
         targetWaypoint = WayPoints.staticWaypoint[wayPointIndex];
 
         sr = GetComponent<SpriteRenderer>();

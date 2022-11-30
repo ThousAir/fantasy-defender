@@ -41,7 +41,11 @@ public class Tower : MonoBehaviour
                 Vector3 direction = target.position - transform.position;
                 direction.z = 0;
                 bow.transform.up = direction;
-                Instantiate(projectPrefab, transform.position, bow.transform.rotation);
+                GameObject j=Instantiate(projectPrefab, transform.position, bow.transform.rotation);
+                if (gameObject.tag == "Wizard")
+                {
+                    j.GetComponent<WizardBullet>().enemy = colliders[0].gameObject;
+                }
                 yield return new WaitForSeconds(1 / projectilesPerSecond);
             }
         }

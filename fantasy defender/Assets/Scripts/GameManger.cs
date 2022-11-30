@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "level2")
+        {
+            lifes = DataCarrier.Data.life;
+            money = DataCarrier.Data.money;
+            if(money <= 200)
+            {
+                money = 200;
+            }
+        }
         if (gameMangerInstance == null)
         {
             gameMangerInstance = this;
@@ -38,6 +48,11 @@ public class GameManger : MonoBehaviour
             Application.Quit(); //does not work in the editor, it works when you compile
 #endif
         }
+    /*    if (lifes <= 0)
+        {
+            SceneManager.LoadScene("Lose");      currently commented out do to the game state of unwinableness untill upgrade are added to the game
+        }
+    */
     }
     public static void checkLife()
     {
